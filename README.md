@@ -1,1 +1,1 @@
-# Ping-optimizer-lua-script-for-roblox
+Universal ping and fps optimizer open source
