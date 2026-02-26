@@ -194,7 +194,7 @@ local function CreateSessionWaypoint()
     print("[Hylord] Map successfully cached to Session Waypoint.")
 end
 
--- Optimizasyonu Uygula
+
 local function ApplyOptimizations()
     StatusText.Text = "Status: Applying Combat Optimizations..."
     
@@ -204,7 +204,7 @@ local function ApplyOptimizations()
     pcall(function() Lighting.EnvironmentDiffuseScale = 0 end)
     pcall(function() Lighting.EnvironmentSpecularScale = 0 end)
     
-    -- HATA ÇÖZÜMÜ: Terrain.Decoration güvenli yazma
+
     pcall(function() Terrain.Decoration = false end)
 
     for obj, _ in pairs(Cache.PostProcessing) do 
@@ -251,7 +251,7 @@ local function RestoreSettings()
     pcall(function() Lighting.EnvironmentDiffuseScale = GlobalConfig.EnvironmentDiffuseScale end)
     pcall(function() Lighting.EnvironmentSpecularScale = GlobalConfig.EnvironmentSpecularScale end)
     
-    -- HATA ÇÖZÜMÜ: Terrain.Decoration güvenli yazma
+
     pcall(function() Terrain.Decoration = GlobalConfig.Decoration end)
 
     for obj, wasEnabled in pairs(Cache.PostProcessing) do
@@ -327,5 +327,6 @@ OptimizeBtn.MouseButton1Click:Connect(function()
         end)
     end
 end)
+
 
 print("[Hylord] Optimizer applied.")
